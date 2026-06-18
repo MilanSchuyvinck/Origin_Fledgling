@@ -1,0 +1,7 @@
+{
+  "type": "origins:action_on_spawn",
+  "entity_action": {
+    "type": "origins:execute_command",
+    "command": "tag @s add vampire_fledgling"
+  }
+}

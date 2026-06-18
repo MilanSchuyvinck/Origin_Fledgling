@@ -1,0 +1,19 @@
+{
+  "type": "origins:modify_damage_taken",
+  "condition": {
+    "type": "origins:or",
+    "conditions": [
+      { "type": "origins:damage_source", "name": "inFire" },
+      { "type": "origins:damage_source", "name": "onFire" },
+      { "type": "origins:damage_source", "name": "lava" },
+      { "type": "origins:damage_source", "name": "fireball" },
+      { "type": "origins:damage_source", "name": "blaze" }
+    ]
+  },
+  "modifier": {
+    "operation": "multiply_total",
+    "value": 1.0
+  },
+  "name": "Unholy Flame",
+  "description": "Fire burns through you twice as fast."
+}

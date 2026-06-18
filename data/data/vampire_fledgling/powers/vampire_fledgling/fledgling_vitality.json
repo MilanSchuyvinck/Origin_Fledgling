@@ -1,0 +1,9 @@
+{
+  "type": "origins:modify_max_health",
+  "modifier": {
+    "operation": "add_base",
+    "value": -10.0
+  },
+  "name": "Fledgling Vitality",
+  "description": "As a newly turned vampire, your body is still adapting. You have 3 less hearts."
+}

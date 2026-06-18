@@ -1,0 +1,24 @@
+{
+	"powers":[
+		"vampire_fledgling:vampire_fledgling/bite",
+		"origins:launch_into_air",
+		"origins:elytra",
+		"vampire_fledgling:vampire_fledgling/breathless",
+		"vampire_fledgling:vampire_fledgling/charm",
+		"vampire_fledgling:vampire_fledgling/fledgling_size",
+		"vampire_fledgling:vampire_fledgling/fledgling_vitality",
+		"vampire_fledgling:vampire_fledgling/mist_form",
+		"vampire_fledgling:vampire_fledgling/night_strenght",
+		"vampire_fledgling:vampire_fledgling/night_vision",
+		"vampire_fledgling:vampire_fledgling/raw_diet",
+		"vampire_fledgling:vampire_fledgling/sun_weakness",
+		"vampire_fledgling:vampire_fledgling/teleport",
+		"vampire_fledgling:vampire_fledgling/undead_passive",
+		"vampire_fledgling:vampire_fledgling/undead_tag",
+		"vampire_fledgling:vampire_fledgling/unholy_flame"
+	],
+	"icon":"minecraft:red_dye",
+	"impact":2,
+"name": "Vampire Fledgling",
+  "description": "A tiny bitch"
+}
