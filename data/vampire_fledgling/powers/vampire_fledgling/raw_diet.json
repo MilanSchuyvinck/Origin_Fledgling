@@ -1,39 +1,37 @@
 {
   "type": "origins:multiple",
-  "name": "Sanguine Diet",
-  "description": "You can only stomach raw meat and red foods. Anything else makes you sick.",
 
-  "allowed_foods": {
-    "type": "origins:food_cooldown",
+  "vampire_food_bonus": {
+    "type": "origins:modify_food",
     "item_condition": {
-      "type": "origins:or",
-      "conditions": [
-        { "type": "origins:ingredient", "ingredient": { "item": "minecraft:raw_beef" } },
-        { "type": "origins:ingredient", "ingredient": { "item": "minecraft:raw_porkchop" } },
-        { "type": "origins:ingredient", "ingredient": { "item": "minecraft:raw_mutton" } },
-        { "type": "origins:ingredient", "ingredient": { "item": "minecraft:raw_chicken" } },
-        { "type": "origins:ingredient", "ingredient": { "item": "minecraft:raw_rabbit" } },
-        { "type": "origins:ingredient", "ingredient": { "item": "minecraft:raw_cod" } },
-        { "type": "origins:ingredient", "ingredient": { "item": "minecraft:raw_salmon" } },
-        { "type": "origins:ingredient", "ingredient": { "item": "minecraft:rotten_flesh" } },
-        { "type": "origins:ingredient", "ingredient": { "item": "minecraft:spider_eye" } },
-        { "type": "origins:ingredient", "ingredient": { "item": "minecraft:apple" } },
-        { "type": "origins:ingredient", "ingredient": { "item": "minecraft:beetroot" } },
-        { "type": "origins:ingredient", "ingredient": { "item": "minecraft:beetroot_soup" } },
-        { "type": "origins:ingredient", "ingredient": { "item": "minecraft:sweet_berries" } },
-        { "type": "origins:ingredient", "ingredient": { "item": "minecraft:melon_slice" } }
-      ]
-    },
-    "cooldown": 0,
-    "item_action": {
-      "type": "origins:consume",
-      "stack": {
-        "item": "minecraft:air"
+      "type": "origins:ingredient",
+      "ingredient": {
+        "tag": "yourpack:vampire_food"
       }
+    },
+    "food_modifier": {
+      "type": "origins:food_value",
+      "food": 4,
+      "saturation": 1.0
     }
   },
 
-  "forbidden_food_effect": {
+  "rotten_flesh_bonus": {
+    "type": "origins:modify_food",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:rotten_flesh"
+      }
+    },
+    "food_modifier": {
+      "type": "origins:food_value",
+      "food": 8,
+      "saturation": 2.0
+    }
+  },
+
+  "reject_food": {
     "type": "origins:action_on_item_use",
     "item_condition": {
       "type": "origins:and",
@@ -44,23 +42,10 @@
         {
           "type": "origins:not",
           "condition": {
-            "type": "origins:or",
-            "conditions": [
-              { "type": "origins:ingredient", "ingredient": { "item": "minecraft:raw_beef" } },
-              { "type": "origins:ingredient", "ingredient": { "item": "minecraft:raw_porkchop" } },
-              { "type": "origins:ingredient", "ingredient": { "item": "minecraft:raw_mutton" } },
-              { "type": "origins:ingredient", "ingredient": { "item": "minecraft:raw_chicken" } },
-              { "type": "origins:ingredient", "ingredient": { "item": "minecraft:raw_rabbit" } },
-              { "type": "origins:ingredient", "ingredient": { "item": "minecraft:raw_cod" } },
-              { "type": "origins:ingredient", "ingredient": { "item": "minecraft:raw_salmon" } },
-              { "type": "origins:ingredient", "ingredient": { "item": "minecraft:rotten_flesh" } },
-              { "type": "origins:ingredient", "ingredient": { "item": "minecraft:spider_eye" } },
-              { "type": "origins:ingredient", "ingredient": { "item": "minecraft:apple" } },
-              { "type": "origins:ingredient", "ingredient": { "item": "minecraft:beetroot" } },
-              { "type": "origins:ingredient", "ingredient": { "item": "minecraft:beetroot_soup" } },
-              { "type": "origins:ingredient", "ingredient": { "item": "minecraft:sweet_berries" } },
-              { "type": "origins:ingredient", "ingredient": { "item": "minecraft:melon_slice" } }
-            ]
+            "type": "origins:ingredient",
+            "ingredient": {
+              "tag": "yourpack:vampire_food"
+            }
           }
         }
       ]
@@ -71,7 +56,7 @@
         {
           "type": "origins:apply_effect",
           "effect": {
-            "effect": "minecraft:nausea",
+            "effect": "minecraft:hunger",
             "duration": 200,
             "amplifier": 1
           }
@@ -79,8 +64,8 @@
         {
           "type": "origins:apply_effect",
           "effect": {
-            "effect": "minecraft:poison",
-            "duration": 100,
+            "effect": "minecraft:nausea",
+            "duration": 120,
             "amplifier": 0
           }
         }
