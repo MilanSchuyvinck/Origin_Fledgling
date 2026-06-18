@@ -12,7 +12,7 @@
   },
   "modifier": {
     "operation": "multiply_total",
-    "value": 1.0
+    "value": 2.0
   },
   "name": "Unholy Flame",
   "description": "Fire burns through you twice as fast."
