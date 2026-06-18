@@ -6,7 +6,7 @@
     "item_condition": {
       "type": "origins:ingredient",
       "ingredient": {
-        "tag": "yourpack:vampire_food"
+        "tag": "fledgling:vampire_food"
       }
     },
     "food_modifier": {
@@ -44,7 +44,7 @@
           "condition": {
             "type": "origins:ingredient",
             "ingredient": {
-              "tag": "yourpack:vampire_food"
+              "tag": "fledgling:vampire_food"
             }
           }
         }
