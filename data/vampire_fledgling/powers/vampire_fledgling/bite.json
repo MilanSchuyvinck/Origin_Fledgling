@@ -1,12 +1,12 @@
 {
   "type": "origins:multiple",
   "name": "Vampiric Bite",
-  "description": "Bite a nearby target to drain their life force. Hold Primary Active to feed. Toggle bad effects with CTRL + Primary Active.",
+  "description": "Bite a nearby target to drain their life force. Hold Secondary Active to feed. Toggle bad effects with CTRL + Secondary Active.",
   "toggle_bad_effects": {
     "type": "origins:toggle",
     "active_by_default": true,
     "key": {
-      "key": "key.origins.primary_active",
+      "key": "key.origins.secondary_active",
       "continuous": false,
       "condition": {
         "type": "origins:key",
@@ -14,7 +14,7 @@
       }
     },
     "name": "Toggle Poison & Nausea",
-    "description": "CTRL + Primary Active toggles poison and nausea on your bite target."
+    "description": "CTRL + Secondary Active toggles poison and nausea on your bite target."
   },
   "bite_active": {
     "type": "origins:action_over_time",
@@ -24,7 +24,7 @@
       "conditions": [
         {
           "type": "origins:key",
-          "key": "key.origins.primary_active"
+          "key": "key.origins.secondary_active"
         },
         {
           "type": "origins:not",
