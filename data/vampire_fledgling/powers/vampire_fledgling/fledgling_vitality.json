@@ -1,0 +1,61 @@
+{
+  "type": "origins:multiple",
+
+  "night_vision": {
+    "type": "origins:night_vision"
+  },
+
+
+  "scale": {
+    "type": "origins:action_over_time",
+
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "function vampire_fledgling:vampire_fledgling/size"
+    },
+
+    "interval": 20
+  },
+
+
+  "reset": {
+    "type": "origins:action_on_callback",
+
+    "entity_action_lost": {
+      "type": "origins:execute_command",
+      "command": "scale reset"
+    }
+  },
+
+
+  "vitality": {
+    "type": "origins:attribute",
+
+    "modifier": {
+      "attribute": "minecraft:generic.max_health",
+      "value": -10.0,
+      "operation": "addition"
+    },
+
+    "update_health": true
+  },
+
+  "breathless": {
+    "type": "origins:stacking_status_effect",
+     "min_stacks": 0,
+      "max_stacks": 1,
+      "duration_per_stack": 20,
+      "effect": {
+      "effect": "minecraft:water_breathing",
+      "show_particles": false,
+      "show_icon": false
+    },
+    "condition": {
+    "type": "origins:submerged_in",
+    "fluid": "minecraft:water"
+    }
+  },
+
+  "name": "Fledgling Vampire",
+  "description": "A newly turned vampire. Gain night vision, no need to breathe, a small frame, and reduced vitality."
+}

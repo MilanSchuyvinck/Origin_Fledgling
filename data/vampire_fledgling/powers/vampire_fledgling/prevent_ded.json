@@ -1,0 +1,40 @@
+{
+  "type": "origins:prevent_death",
+  "entity_action": {
+    "type": "origins:and",
+    "actions": [
+      {
+        "type": "origins:revoke_power",
+        "power": "vampire_fledgling:vampire_fledgling/prevent_ded",
+        "source": "vampire_fledgling:undying_grant"
+      },
+      {
+        "type": "origins:trigger_cooldown",
+        "power": "vampire_fledgling:vampire_fledgling/undying_cooldown"
+      },
+      {
+        "type": "origins:play_sound",
+        "sound": "minecraft:entity.bat.hurt",
+        "volume": 2.0,
+        "pitch": 0.5
+      },
+      {
+        "type": "origins:play_sound",
+        "sound": "minecraft:entity.bat.death",
+        "volume": 0.5,
+        "pitch": 0.1
+      },
+      {
+        "type": "origins:apply_effect",
+        "effect": {
+          "effect": "minecraft:regeneration",
+          "amplifier": 1,
+          "duration": 200,
+          "show_particles": true,
+          "show_icon": true
+        }
+      }
+    ]
+  },
+  "hidden": true
+}

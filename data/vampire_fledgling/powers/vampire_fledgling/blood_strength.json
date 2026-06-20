@@ -1,0 +1,126 @@
+{
+  "type": "origins:multiple",
+
+  "name": "Nocturnal Vigor",
+  "description": "Grants vampire powers away from sunlight and when well fed.",
+
+
+  "strong": {
+    "type": "origins:stacking_status_effect",
+
+    "min_stacks": 0,
+    "max_stacks": 1,
+    "duration_per_stack": 40,
+
+    "effects": [
+      {
+        "effect": "minecraft:strength",
+        "amplifier": 1,
+        "duration": 80,
+        "show_particles": false,
+        "show_icon": true
+      },
+      {
+        "effect": "minecraft:speed",
+        "amplifier": 0,
+        "duration": 80,
+        "show_particles": false,
+        "show_icon": true
+      }
+    ],
+
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:exposed_to_sun",
+          "inverted": true
+        },
+        {
+          "type": "origins:food_level",
+          "comparison": ">=",
+          "compare_to": 18
+        }
+      ]
+    }
+  },
+
+
+  "normal": {
+    "type": "origins:stacking_status_effect",
+
+    "min_stacks": 0,
+    "max_stacks": 1,
+    "duration_per_stack": 40,
+
+    "effects": [
+      {
+        "effect": "minecraft:strength",
+        "amplifier": 0,
+        "duration": 80,
+        "show_particles": false,
+        "show_icon": true
+      },
+      {
+        "effect": "minecraft:speed",
+        "amplifier": 0,
+        "duration": 80,
+        "show_particles": false,
+        "show_icon": true
+      }
+    ],
+
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:exposed_to_sun",
+          "inverted": true
+        },
+        {
+          "type": "origins:food_level",
+          "comparison": ">=",
+          "compare_to": 12
+        },
+        {
+          "type": "origins:food_level",
+          "comparison": "<",
+          "compare_to": 18
+        }
+      ]
+    }
+  },
+
+
+  "regeneration": {
+    "type": "origins:stacking_status_effect",
+
+    "min_stacks": 0,
+    "max_stacks": 1,
+
+    "duration_per_stack": 0,
+
+    "effect": {
+      "effect": "minecraft:regeneration",
+      "amplifier": 0,
+      "duration": 80,
+      "show_particles": false,
+      "show_icon": true
+    },
+
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:exposed_to_sun",
+          "inverted": true
+        },
+        {
+          "type": "origins:food_level",
+          "comparison": ">=",
+          "compare_to": 8
+        }
+      ]
+    }
+  }
+}
