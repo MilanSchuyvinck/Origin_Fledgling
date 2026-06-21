@@ -1,0 +1,16 @@
+{
+  "type": "origins:action_over_time",
+  "interval": 20,
+  "condition": {
+    "type": "origins:resource",
+    "resource": "vampire_fledgling:vampire_fledgling/undying_cooldown",
+    "comparison": "==",
+    "compare_to": 0
+  },
+  "entity_action": {
+    "type": "origins:grant_power",
+    "power": "vampire_fledgling:vampire_fledgling/prevent_ded",
+    "source": "vampire_fledgling:undying_grant"
+  },
+  "hidden": true
+}
